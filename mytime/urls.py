@@ -22,4 +22,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.homepage, name='home'),
     path('about/',views.about,name='aboutpage'),
+    path('create_time_entry', views.create_time_entry, name="create_time_entry"),
+    path('timeentry/<str:pk>/', views.update_time_entry, name="update-time-entry")
 ]

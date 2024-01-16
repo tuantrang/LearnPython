@@ -15,9 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include,path
+from mytime import urls
 
 urlpatterns = [
     path("polls/", include("polls.urls")),
+    # path('', urls.views.homepage),
     path('admin/', admin.site.urls),    
-    path('mytime/', include('mytime.urls')),  
+    path('', include('mytime.urls')),  
+    path("__reload__/", include("django_browser_reload.urls")),
 ]
