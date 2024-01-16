@@ -1,0 +1,13 @@
+{% extends 'mytime/layout.html' %}
+
+{% block title %}
+    Time Entry
+{% endblock%}
+
+{% block content %}
+<form action="" method="POST" class="form">
+    {% csrf_token%}
+    {{form.as_p}}
+    <button class="bg-blue-400 text-black" type="submit">Submit</button>
+</form>
+{% endblock%}

@@ -1,0 +1,35 @@
+{% extends 'mytime/layout.html' %}
+
+{% block title %}
+    Home 
+{% endblock %}
+
+{% block content %}
+<h1>Activity</h1>
+<div>Recent Activity</div>
+    <table class="w-full">
+        <thead class="bg-gray-50 border-b-2 border-gray-200">        
+            <tr>
+                <th class="p-3 text-sm font-semibold tracking-wide text-left">Date</th>
+                <th class="p-3 text-sm font-semibold tracking-wide text-left">Punch</th>
+                <th class="p-3 text-sm font-semibold tracking-wide text-left">Time</th>
+                <th class="p-3 text-sm font-semibold tracking-wide text-left">Note</th>
+                <th class="p-3 text-sm font-semibold tracking-wide text-left">&nbsp;</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for time_entry in time_entries %}
+            <tr>              
+                <td class="activity__td text-red-500 p-3 text-sm text-gray-700">
+                    <a href="{% url 'update-time-entry' time_entry.id %}">{{time_entry.entry_date}}</a> 
+                </td>
+                <td class="activity__td p-3 text-sm text-gray-700">{{time_entry.punch}}</td>
+                <td class="activity__td p-3 text-sm text-gray-700">{{time_entry.time_punched}}</td>
+                <td class="activity__td p-3 text-sm text-gray-700">{{time_entry.note}}</td>    
+                <td class="activity__td p-3 text-sm text-gray-700"><a href="{% url 'create_time_entry' %}"><i class="fa fa-plus"></i> Add Time</a></td>    
+                            
+            </tr>
+            {% endfor %}                
+        </tbody>
+    </table>   
+{% endblock %}

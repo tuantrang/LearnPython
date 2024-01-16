@@ -14,12 +14,12 @@
         },
         {
             "name":"mytime",
-            "python":"C:\\Development\\learnpython\\.venv\\Scripts\\python.exe",
+            "python":"C:\\Development\\LearnPython\\.venv\\Scripts\\python.exe",
             "type":"python",
             "request":"launch",
-            "program": "C:\\Development\\learnpython\\manage.py",            
+            "program": "C:\\Development\\LearnPython\\manage.py",            
             "console": "internalConsole",
             "args": ["runserver","1981"]
-        }
+        }        
     ]
 }
